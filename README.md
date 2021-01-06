@@ -2,7 +2,7 @@
 
 如何编译带apfree-wifidog 的openwrt固件，本模板编译的是x86-64版本，如果想编译自己的版本，需要修改对应的.config文件
 
-## 使用教程
+## 使用说明
 
  - 点击[模板](https://github.com/liudf0716/actions-apfree-wifidog/generate)，填写项目名称后，点击`Create repository from template`
  
