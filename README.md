@@ -14,3 +14,7 @@
  
  - 等待2个多小时后，即可从下图所示的位置下载相应的固件及apfree-wifidog代码及ipk包了
 ![下载编译完成的压缩包](action3.png)
+
+- 点击右上角 Star，给作者加油
+
+![点击右上角 Star](action4.png)
