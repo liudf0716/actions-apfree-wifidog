@@ -41,7 +41,7 @@ jobs:
 
     steps:
     - name: checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v2.3.4
 
     - name: initialization environment
       env:
@@ -107,7 +107,7 @@ jobs:
         cp dl/apfree-wifidog* bin/downloads/
 
     - name: upload bin directory
-      uses: actions/upload-artifact@main
+      uses: actions/upload-artifact@v2.2.2
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
          name: openwrt_apfree_wifidog_dl
