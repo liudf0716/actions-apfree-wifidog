@@ -22,7 +22,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
-  REPO_BRANCH: 19.07
+  REPO_BRANCH: openwrt-19.07
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   APFREEWIFIDOG: apfreewifidog.sh
