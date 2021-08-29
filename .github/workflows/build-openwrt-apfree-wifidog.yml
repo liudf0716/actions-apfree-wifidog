@@ -24,7 +24,7 @@ env:
   REPO_URL: https://github.com/openwrt/openwrt.git
   REPO_BRANCH: openwrt-19.07
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
+  CONFIG_FILE: config.ipq806x
   APFREEWIFIDOG: apfreewifidog.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
