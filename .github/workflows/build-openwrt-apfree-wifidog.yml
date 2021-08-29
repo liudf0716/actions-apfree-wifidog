@@ -76,7 +76,14 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $APFREEWIFIDOG
         cd openwrt && $GITHUB_WORKSPACE/$APFREEWIFIDOG
-
+    
+    - name: download package
+      run: |
+        cd openwrt
+        make download -j16 && make download -j16
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
+          
     - name: compile the firmware
       id: compile
       run: |
