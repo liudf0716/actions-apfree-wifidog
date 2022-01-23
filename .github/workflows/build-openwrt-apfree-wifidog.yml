@@ -60,7 +60,7 @@ jobs:
       run: |
         [ -e ${{ github.event.inputs.configFile }} ] && mv ${{ github.event.inputs.configFile }} openwrt/.config
         cd openwrt 
-        ls package/apfree-wifidog/
+        ls package/
         sed -i 's/=3.11.1716/=master/g'  package/apfree-wifidog/Makefile
         cat package/apfree-wifidog/Makefile 
     
