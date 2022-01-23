@@ -42,35 +42,13 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-
+    
     steps:
-    - name: checkout
-      uses: liudf0716/checkout@v2.3.4
-
-    - name: initialization environment
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
-        sudo timedatectl set-timezone "$TZ"
-        sudo mkdir -p /workdir
-        sudo chown $USER:$GROUPS /workdir
+    - uses: actions/checkout@v2
 
     - name: clone source code
-      working-directory: /workdir
       run: |
-        df -hT $PWD
         git clone  $REPO_URL -b ${{ github.event.inputs.openwrtBranch }} openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-
-    - name: add third-party feeds
-      run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default 
 
     - name: update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -82,7 +60,7 @@ jobs:
       run: |
         [ -e ${{ github.event.inputs.configFile }} ] && mv ${{ github.event.inputs.configFile }} openwrt/.config
         chmod +x $APFREEWIFIDOG
-        cd openwrt &&  package/
+        cd openwrt &&  tree package/
         cd openwrt && $GITHUB_WORKSPACE/$APFREEWIFIDOG
     
     - name: download package
