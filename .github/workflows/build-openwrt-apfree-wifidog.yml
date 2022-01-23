@@ -56,11 +56,12 @@ jobs:
     - name: install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: load custom configuration
+    - name: set apfree-wifidog version to master
       run: |
         [ -e ${{ github.event.inputs.configFile }} ] && mv ${{ github.event.inputs.configFile }} openwrt/.config
-        chmod +x $APFREEWIFIDOG
-        cd openwrt && $GITHUB_WORKSPACE/$APFREEWIFIDOG
+        cd openwrt 
+        sed -i 's/=3.11.1716/=master/g'  package/apfree-wifidog/Makefile
+        cat package/apfree-wifidog/Makefile 
     
     - name: download package
       run: |
