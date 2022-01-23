@@ -60,7 +60,6 @@ jobs:
       run: |
         [ -e ${{ github.event.inputs.configFile }} ] && mv ${{ github.event.inputs.configFile }} openwrt/.config
         cd openwrt 
-        ls package/feeds/packages/
         sed -i 's/=3.11.1716/=master/g'  package/feeds/packages/apfree-wifidog/Makefile
         cat package/feeds/packages/apfree-wifidog/Makefile 
     
@@ -99,7 +98,6 @@ jobs:
       run: |
         cd openwrt
         mkdir -p bin/downloads
-        cp bin/targets/x86/64/*.gz bin/downloads/
         cp bin/packages/x86_64/packages/apfree-wifidog*.ipk bin/downloads/
         cp dl/apfree-wifidog* bin/downloads/
 
