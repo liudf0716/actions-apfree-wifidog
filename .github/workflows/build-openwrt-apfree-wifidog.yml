@@ -82,6 +82,7 @@ jobs:
       run: |
         [ -e ${{ github.event.inputs.configFile }} ] && mv ${{ github.event.inputs.configFile }} openwrt/.config
         chmod +x $APFREEWIFIDOG
+        cd openwrt && ls package/feeds/packages/apfree-wifidog/
         cd openwrt && $GITHUB_WORKSPACE/$APFREEWIFIDOG
     
     - name: download package
