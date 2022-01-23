@@ -72,21 +72,18 @@ jobs:
    
     - name: Compile Tools
       id: tools
-      if: steps.download.conclusion  == 'success'
       run: |
         cd openwrt
         make tools/compile -j4
           
     - name: Compile Toolchain
       id: toolchain
-      if: steps.tools.conclusion == 'success'
       run: |
         cd openwrt
         make toolchain/compile -j4
       
     - name: Compile package apfree-wifidog
       id: compile
-      if: steps.toolchain.conclusion  == 'success'
       run: |
         cd openwrt
         make diffconfig
