@@ -83,6 +83,11 @@ jobs:
         cd openwrt
         make toolchain/compile -j4
     
+    - name: Compile linux kernel
+      run: |
+        cd openwrt
+        make target/linux/compile
+    
     - name: Compile ipset
       run: |
         cd openwrt
