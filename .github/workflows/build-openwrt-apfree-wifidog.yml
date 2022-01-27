@@ -61,7 +61,7 @@ jobs:
         [ -e ${{ github.event.inputs.configFile }} ] && mv ${{ github.event.inputs.configFile }} openwrt/.config
         cd openwrt 
         git branch -a
-        sed -i 's/=3.11.1716/=master/g'  package/feeds/packages/apfree-wifidog/Makefile
+        cp ../apfree-wifidog/Makefile  package/feeds/packages/apfree-wifidog/Makefile
         cat package/feeds/packages/apfree-wifidog/Makefile 
     
     - name: download package
