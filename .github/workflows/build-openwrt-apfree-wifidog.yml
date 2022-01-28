@@ -93,11 +93,6 @@ jobs:
         cd openwrt
         make package/ipset/compile
         
-    - name: Compile libssh2
-      run: |
-        cd openwrt
-        make package/libssh2/compile V=s
-        
     - name: Compile  apfree-wifidog
       id: compile
       run: |
