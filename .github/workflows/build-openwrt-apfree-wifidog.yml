@@ -106,7 +106,7 @@ jobs:
       run: |
         cd openwrt
         mkdir -p bin/downloads
-        cp bin/packages/x86_64/packages/apfree-wifidog*.ipk bin/downloads/
+        find bin/packages/ -name apfree-wifidog*.ipk -exec cp "{}" bin/downloads/  \;
         cp dl/apfree-wifidog* bin/downloads/
 
     - name: upload bin directory
