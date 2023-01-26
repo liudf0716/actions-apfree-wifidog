@@ -12,7 +12,7 @@ PKG_VERSION:=master
 PKG_RELEASE:=6
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/liudf0716/apfree_wifidog.git
+PKG_SOURCE_URL:=https://github.com/liudf0716/apfree-wifidog.git
 PKG_SOURCE_VERSION:=$(PKG_VERSION)
 PKG_MIRROR_HASH:=0fadb7a0e139bf4a5c6daffdd0f200ee2a4c903aea71e46bc19212b054ca71a7
 
@@ -35,9 +35,9 @@ endef
 
 define Package/apfree-wifidog/description
   The ApFree Wifidog project is a complete and embeddable captive portal
-  solution for wireless community groups or individuals who wish to open a free
-  Hotspot while still preventing abuse of their Internet connection.
-  It's enhanced wifidog
+  solution for wireless community groups or individuals who want to create a free
+  hotspot while preventing misuse of their Internet connection.
+  It's extended Wifidog
 endef
 
 define Package/apfree-wifidog/conffiles
