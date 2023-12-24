@@ -8,13 +8,13 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=apfree-wifidog
-PKG_VERSION:=master
-PKG_RELEASE:=6
+PKG_VERSION:=6.08.1950
+PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/liudf0716/apfree-wifidog.git
 PKG_SOURCE_VERSION:=$(PKG_VERSION)
-PKG_MIRROR_HASH:=0fadb7a0e139bf4a5c6daffdd0f200ee2a4c903aea71e46bc19212b054ca71a7
+PKG_MIRROR_HASH:=1fb8f80970b29e7af382c6d35cb23ee6eb932483579ce9497e21ce0fb65a381f
 
 PKG_MAINTAINER:=Dengfeng Liu <liudf0716@gmail.com>
 PKG_LICENSE:=GPL-3.0-or-later
@@ -27,17 +27,16 @@ define Package/apfree-wifidog
   SUBMENU:=Captive Portals
   SECTION:=net
   CATEGORY:=Network
-  DEPENDS:=+zlib +iptables-mod-extra +iptables-mod-ipopt +kmod-ipt-nat +iptables-mod-nat-extra \
-           +libjson-c +ipset +libip4tc +libevent2 +libevent2-openssl +libuci +px5g
+  DEPENDS:=+zlib +libjson-c +libevent2 +libevent2-openssl +libuci 
   TITLE:=Apfree's wireless captive portal solution
   URL:=https://github.com/liudf0716/apfree_wifidog
 endef
 
 define Package/apfree-wifidog/description
   The ApFree Wifidog project is a complete and embeddable captive portal
-  solution for wireless community groups or individuals who want to create a free
-  hotspot while preventing misuse of their Internet connection.
-  It's extended Wifidog
+  solution for wireless community groups or individuals who wish to open a free
+  Hotspot while still preventing abuse of their Internet connection.
+  It's enhanced wifidog
 endef
 
 define Package/apfree-wifidog/conffiles

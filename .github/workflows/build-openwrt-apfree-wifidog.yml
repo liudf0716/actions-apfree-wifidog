@@ -23,11 +23,11 @@ on:
       openwrtBranch:
         description: 'input openwrt branch'
         required: true
-        default: 'openwrt-21.02'
+        default: 'openwrt-22.03'
       configFile:
         description: 'input openwrt config file name'
         required: true
-        default: 'config.x86.2102'
+        default: 'config.x86.2203'
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
